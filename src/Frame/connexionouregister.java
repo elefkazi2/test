@@ -30,6 +30,7 @@ public class connexionouregister extends JFrame {
 	private JPasswordField passwordField;
 	private JPasswordField passwordField2;
 	private int t;
+	private double tr;
 	connexionouregister conec=new connexionouregister();
 	Person p=new Person();
 	client c=new client();
