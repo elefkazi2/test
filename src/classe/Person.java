@@ -8,6 +8,7 @@ public class Person {
 	private String prenom;
 	private String password;
 	private String role;
+	//private String 
 	AbstractDAOFactory adf = AbstractDAOFactory.getFactory(AbstractDAOFactory.DAO_FACTORY);
 	DAO<Person> persondao = adf.getp();
 	
@@ -72,9 +73,8 @@ public class Person {
 			break;
 		}
 	}
-	public void register(String nu,String n,String pr,String pa,String r) {
-		Person p=new Person(nu,n,pr,pa,r);
-		persondao.register(p);
+	public void register(String nu,String pa) {
+		//persondao.register(nu,pa,);
+   }
 		
-	}
 }

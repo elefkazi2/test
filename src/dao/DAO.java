@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.*;
 
+import classe.Person;
+
 
 public abstract class DAO<T> {
 protected Connection connect = null;
@@ -17,5 +19,6 @@ protected Connection connect = null;
 	public abstract boolean update(T obj,String s);
 	
 	public abstract String logindao(String n,String p);
+	public abstract Person find(int id);
 
 }

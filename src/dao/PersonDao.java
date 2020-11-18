@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import classe.*;
 
 public class PersonDao extends DAO<Person>{
@@ -47,6 +48,20 @@ public class PersonDao extends DAO<Person>{
 			e.printStackTrace();
 		}
 		return false;
+	}
+	public Person find(int id){
+		Person eleve = new Person();
+		try{
+			ResultSet result = this.connect.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE,
+	ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM person WHERE id = '"+ id+"'");
+			if(result.first())
+eleve = new Person(id, result.getString("nom_utilisateur"), result.getString("nom"), null, null, null);
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+		}
+		return eleve;
 	}
 	public String logindao(String n,String p) {
 		String r = null;

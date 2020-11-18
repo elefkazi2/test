@@ -9,7 +9,7 @@ public class client extends Person{
 		super(nu,n,pr,pa,r);
 	}
 	public void register(String nu,String n,String pr,String pa) {
-		super.register(nu, n, pr, pa, "client");		
+		//super.register(nu, n, pr, pa, "client");		
 	}
 	
 }

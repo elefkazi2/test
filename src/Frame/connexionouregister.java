@@ -17,6 +17,7 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import classe.*;
+import com.toedter.calendar.JDateChooser;
 
 
 public class connexionouregister extends JFrame {
@@ -29,10 +30,6 @@ public class connexionouregister extends JFrame {
 	private JTextField textField2;
 	private JPasswordField passwordField;
 	private JPasswordField passwordField2;
-	private int t;
-	private double tr;
-	private float g;
-	connexionouregister conec=new connexionouregister();
 	Person p=new Person();
 	client c=new client();
 	/**
@@ -108,9 +105,18 @@ public class connexionouregister extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					p.login(textField1.getText(), passwordField.getText());
+					JLabel ty = new JLabel(p.getn());
+					ty.setBounds(332, 190, 78, 14);
+					panel_1.add(ty);
+					
+					JLabel tg = new JLabel(p.getpa());
+					tg.setBounds(74, 232, 86, 14);
+					panel_1.add(tg);
+					
+					
 				}
 				catch(Exception ex) {				
-					conec.setVisible(true);
+					//conec.setVisible(true);
 				}
 				
 			}
@@ -158,15 +164,14 @@ public class connexionouregister extends JFrame {
 		passwordField2 = new JPasswordField();
 		passwordField2.setBounds(172, 139, 151, 20);
 		panel.add(passwordField2);
-		
 	
 		JButton btnsenregistrer1;
 		btnsenregistrer1 = new JButton("S'enregistrer");
 		btnsenregistrer1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					c.register(textField2.getText(), n, pr,passwordField2.getText());
-					conec.setVisible(true);
+					//c.register(textField2.getText(), n, pr,passwordField2.getText());
+					//conec.setVisible(true);
 				}
 				catch(Exception ex) {
 					textField2.setText(null);
@@ -177,5 +182,6 @@ public class connexionouregister extends JFrame {
 		btnsenregistrer1.setFont(new Font("Tahoma", Font.ITALIC, 14));
 		btnsenregistrer1.setBounds(146, 184, 133, 23);
 		panel.add(btnsenregistrer1);
+		
 	}
 }
