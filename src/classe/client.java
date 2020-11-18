@@ -11,4 +11,5 @@ public class client extends Person{
 	public void register(String nu,String n,String pr,String pa) {
 		//super.register(nu, n, pr, pa, "client");		
 	}
+	punli voidggg()
 }
